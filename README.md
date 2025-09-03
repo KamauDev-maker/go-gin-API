@@ -36,7 +36,10 @@ Gin is a web framework for Go, similar to Express.js for Node.js or Flask for py
 *   Download and install from:https://go.dev/doc/install
 *   Verify installation:
 
-    ```$ go version ```
+    ```
+    bash
+    $ go version 
+    ```
 
 *   Step 2 : setup Project Directory
 
