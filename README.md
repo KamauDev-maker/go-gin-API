@@ -40,23 +40,62 @@ Gin is a web framework for Go, similar to Express.js for Node.js or Flask for py
 
 *   Step 2 : setup Project Directory
 
-    ```$ mkdir go-gin-api```  
-    ```$ cd go-gin-api```     
-    ```$ go mod init go-gin-api```  
+    ```
+    bash
+    $ mkdir go-gin-api  
+    $ cd go-gin-api     
+    $ go mod init go-gin-api
+    ```  
+    *   `go mod init `creates a `go.mod` file in your project.
+    *   The `go.mod` file keeps track of your project name(go-gin-api)
+Your `go.mod` file will look like this:
+
+    
+    module go-gin-api
+    go 1.18
+
+(*your GO version might be different*)
 * Step 3: Install gin   
-    ```go get -u github.com/gin-gonic/gin```
+    ```
+    bash
+    go get -u github.com/gin-gonic/gin
+    ```
+After the download make sure to import Gin in your code as shown in `main.go` file. 
+
+Run:
+
+```
+bash
+    go mod tidy
+```    
+This command adds missing packages to `go.mod`, removes unused ones and updates `go.sum`
+
+`go.mod` should look like:
+
+```
+module go-gin-api
+go 1.18
+require github.com/gin-gonic/gin v1.10.1
+```
+And you'll also have a go.sum file listing all the exact dependency versions plus checksums.
 ## Minimal working Example:
 This examples sets up a minimal Gin web server that listens on port 8080 and returns ```"Hello World!"``` when accessed at ```http://localhost:8080/```.
 
 ### Expected Output (Terminal):
 
-```go run main.go```    
+```
+bash
+go run main.go
+```    
 
 ```[GIN-debug] Listening and serving HTTP on :8080```  
 
 ### Expected Output (Browser)
 
-```{"message":"Hello, World! Oscar"}```
+```
+json
+{"message":"Hello, World! Oscar"}
+```
 
 ## AI Prompt Journal
 * *"Building a beginner's toolkit for an API using Go and Gin Framework."*  
